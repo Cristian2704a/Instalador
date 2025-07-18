@@ -123,6 +123,8 @@ backend_node_dependencies() {
 
   sleep 2
 
+  sudo npm install -g typescript ts-node
+
 sudo su - deploy <<EOF
 cd /home/deploy/${instancia_add}/backend
 mkdir logs
