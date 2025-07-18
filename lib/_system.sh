@@ -38,7 +38,7 @@ system_git_clone() {
   sleep 2
 
 sudo su - deploy <<EOF
-  git clone -b main https://Cristian2704a:${token_code}@github.com/AutoAtende/AutoAtende.git /home/deploy/${instancia_add}
+  git clone -b main https://Cristian2704a:${token_code}@github.com/Cristian2704a/AutoAtende.git /home/deploy/${instancia_add}
 EOF
 
   sleep 2
@@ -205,30 +205,6 @@ sudo ufw allow 22
 sudo ufw allow 80
 sudo ufw allow 443
 sudo ufw enable
-EOF
-
-  sleep 2
-}
-#######################################
-# installs docker
-# Arguments:
-#   None
-#######################################
-system_docker_install() {
-  print_banner
-  printf "${WHITE} 💻 Instalando docker...${GRAY_LIGHT}"
-  printf "\n\n"
-
-  sleep 2
-
-  sudo su - root <<EOF
-  apt install -y apt-transport-https \
-                 ca-certificates curl \
-                 software-properties-common
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-  
-  add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-  apt install -y docker-ce
 EOF
 
   sleep 2

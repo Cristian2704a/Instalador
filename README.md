@@ -16,7 +16,7 @@ sudo apt install -y git && git clone https://github.com/AutoAtende/AA-INSTALLER.
 ## 🗿 Instalação Manual -------------------------------------------------
 ## Realizando atualizações na vps
 
-A instalação manual usa o redis fora do docker.
+
 
 Atulizações de pacotes e instalação de libs que serão utilizadas pela vps.
 
