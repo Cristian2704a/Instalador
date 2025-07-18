@@ -310,8 +310,7 @@ system_nginx_install() {
   apt install -y nginx
   rm /etc/nginx/sites-enabled/default
   rm /etc/nginx/sites-available/default
-  apt-get install -y nginx-module-geoip2
-  sed -i '1s@^@load_module modules/ngx_http_geoip2_module.so;\n@' /etc/nginx/nginx.conf
+
 EOF
 
   sleep 2

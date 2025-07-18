@@ -26,6 +26,11 @@ print_banner
 printf "${WHITE} 💻 Configurando o GeoIP com a nova chave...${GRAY_LIGHT}"
 printf "\n\n"
 
+sudo su - root <<EOF
+apt-get install -y nginx-module-geoip2
+sed -i '1s@^@load_module /usr/share/nginx/modules/ngx_http_geoip2_module.so;\n@' /etc/nginx/nginx.conf
+EOF
+
 system_geoip_setup
 system_nginx_restart
 
