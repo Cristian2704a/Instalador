@@ -47,9 +47,7 @@ system_docker_install
 system_snapd_install
 system_nginx_install
 
-if [[ -n "${maxmind_license_key}" ]]; then
-  system_geoip_setup
-fi
+
 
 system_certbot_install
 

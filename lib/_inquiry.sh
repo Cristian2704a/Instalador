@@ -108,15 +108,6 @@ get_urls() {
   get_redis_port
   get_facebook_app_id
   get_facebook_app_secret
-  get_maxmind_license_key
-}
-
-get_maxmind_license_key() {
-  
-  print_banner
-  printf "${WHITE} 💻 Digite a chave de licença do MaxMind (GeoIP) (opcional):${GRAY_LIGHT}"
-  printf "\n\n"
-  read -p "> " maxmind_license_key
 }
 
 software_delete() {

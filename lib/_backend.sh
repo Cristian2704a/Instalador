@@ -287,8 +287,10 @@ sudo su - root << EOF
 cat > /etc/nginx/sites-available/${instancia_add}-backend << 'END'
 server {
   server_name $backend_hostname;
-  if ($allowed_country = no) {
-      return 403;
+  if (-f /etc/nginx/conf.d/geoip.conf) {
+    if ($allowed_country = no) {
+        return 403;
+    }
   }
 
   location / {

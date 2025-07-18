@@ -103,8 +103,10 @@ server {
   root /home/deploy/${instancia_add}/frontend/build;
   index index.html;
 
-  if ($allowed_country = no) {
-      return 403;
+  if (-f /etc/nginx/conf.d/geoip.conf) {
+    if ($allowed_country = no) {
+        return 403;
+    }
   }
 
   location / {
